@@ -3,6 +3,7 @@ import { User, Clock, X, ChefHat, Edit, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 import DelayedLoginPrompt from "../components/DelayedLoginPrompt";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 import { HashLink } from "react-router-hash-link";
 
 const Dashboard = ({ user, pantry, dietary, favorites, disliked }) => {
@@ -30,7 +31,7 @@ const Dashboard = ({ user, pantry, dietary, favorites, disliked }) => {
   const handleRecipesSearch = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/recipes?diet=${dietary}&query=${recipeName}&includeIngredients=${included}&excludeIngredients=${
+        `${API_URL}/api/recipes?diet=${dietary}&query=${recipeName}&includeIngredients=${included}&excludeIngredients=${
           disliked.length > 0 ? disliked + "," : ""
         }${excluded}`,
         {

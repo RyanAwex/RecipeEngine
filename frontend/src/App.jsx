@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import DashboardLayout from "./pages/DashboardLayout";
@@ -26,10 +27,9 @@ function App() {
   useEffect(() => {
     const getProfileData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/user/profile",
-          { withCredentials: true }
-        );
+        const response = await axios.get(`${API_URL}/api/user/profile`, {
+          withCredentials: true,
+        });
         const userData = response.data.user;
         const profileData = response.data.profile;
 

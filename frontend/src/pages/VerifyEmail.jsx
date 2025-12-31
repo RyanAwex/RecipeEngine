@@ -64,19 +64,6 @@ const VerifyEmail = () => {
     }
   }, [code]);
 
-  // sending the verification code to the backend
-  // useEffect(() => {
-  //   const sendVerificationCode = async () => {
-  //     try {
-  //       const response = await axios.post("http://localhost:5000/api/auth/verify-email", {
-  //         code
-  //       })
-  //     } catch (error) {
-  //       console.log("Error", error.message)
-  //     }
-  //   }
-  // })
-
   return (
     <div className="max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden">
       <div className="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-2xl p-8 w-full max-w-md">
