@@ -5,12 +5,12 @@ import toast from "react-hot-toast";
 
 const API_AUTH =
   import.meta.env.VITE_MODE === "development"
-    ? `${API_URL}/api/auth`
-    : "/api/auth";
+    ? `http://localhost:5000/api/auth`
+    : `${API_URL}/api/auth`;
 const API_USER =
   import.meta.env.VITE_MODE === "development"
-    ? `${API_URL}/api/user`
-    : "/api/user";
+    ? `http://localhost:5000/api/user`
+    : `${API_URL}/api/user`;
 
 axios.defaults.withCredentials = true;
 
